@@ -39,40 +39,44 @@ image-build:
 # Development
 
 format: # format your code according to project linter tools
-	poetry run black . -t py312
-	poetry run isort .
+	uv run ruff check
+	uv run ruff format
+	uv run isort .
+
+ruff:
+	uv run ruff check
+	uv run ruff format
 
 black:
-	poetry run black --check backend -t py312
+	uv run black --check backend -t py312
 
 isort:
-	poetry run isort --check backend
+	uv run isort --check backend
 
 flake8:
-	poetry run flake8 --inline-quotes '"'
+	uv run flake8 --inline-quotes '"'
 
 pylint:
-	PYTHONPATH=$(PYTHONPATH) poetry run pylint backend
+	PYTHONPATH=$(PYTHONPATH) uv run pylint backend
 
 mypy:
-	PYTHONPATH=$(PYTHONPATH) poetry run mypy --namespace-packages --show-error-codes backend --check-untyped-defs --ignore-missing-imports --show-traceback --enable-incomplete-feature=NewGenericSyntax
+	PYTHONPATH=$(PYTHONPATH) uv run mypy --namespace-packages --show-error-codes backend --check-untyped-defs --ignore-missing-imports --show-traceback --enable-incomplete-feature=NewGenericSyntax
 
 lint: black isort flake8 pylint mypy
 
 pip-audit:
-	poetry run pip-audit
+	uv run pip-audit
 
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -n 2
+	PYTHONPATH=$(PYTHONPATH) uv run pytest -n 2
 
-poetry-install:
-	poetry config virtualenvs.create false
-	poetry install --no-root --no-interaction
+sync-deps:
+	uv sync --frozen --no-cache --no-editable
 
-ci-lint: poetry-install lint
+ci-lint: sync-deps lint
 
-ci-test: poetry-install test
+ci-test: sync-deps test
 
-ci-deps-audit: poetry-install pip-audit
+ci-deps-audit: sync-deps pip-audit
 
 all: format lint test pip-audit
