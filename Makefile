@@ -60,13 +60,10 @@ mypy:
 lint: black isort flake8 pylint mypy
 
 pip-audit:
-	@# We don't use python-jose (`GHSA-cjwg-qfpm-7377`, `GHSA-6c5p-j8vq-pqhj`)
-	poetry run pip-audit \
-		--ignore-vuln GHSA-cjwg-qfpm-7377 \
-		--ignore-vuln GHSA-6c5p-j8vq-pqhj
+	poetry run pip-audit
 
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -n 2 --reuse-db
+	PYTHONPATH=$(PYTHONPATH) poetry run pytest -n 2
 
 poetry-install:
 	poetry config virtualenvs.create false

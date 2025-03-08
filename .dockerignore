@@ -15,6 +15,7 @@ __pycache__
 node_modules/
 /npm-debug.log
 /.idea/
+.github
 .vscode
 coverage
 .python-version
@@ -37,3 +38,5 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+LICENSE.md
+README.md

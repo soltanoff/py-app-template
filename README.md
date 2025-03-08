@@ -3,6 +3,8 @@
 ## API overview
 
 - [App](http://backend-app.lvh.me/) | [localhost](http://localhost:8000/)
+    - [App Swagger](http://backend-app.lvh.me/docs) | [localhost](http://backend-app.lvh.me/docs)
+    - [App ReDoc](http://backend-app.lvh.me/redoc) | [localhost](http://backend-app.lvh.me/redoc)
 - [Kafka UI](http://kafka-ui.lvh.me/) | [localhost](http://localhost:15672/)
 - [RabbitMQ Admin Panel](http://rabbitmq.lvh.me/) | [localhost](http://localhost:15672/)
 - [S3 Admin Panel](http://s3-admin.lvh.me/) | [localhost](http://localhost:9090/)
