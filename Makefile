@@ -73,10 +73,20 @@ test:
 sync-deps:
 	uv sync --frozen --no-cache --no-editable
 
+all: format lint test pip-audit
+
+# CI
+
 ci-lint: sync-deps lint
 
 ci-test: sync-deps test
 
 ci-deps-audit: sync-deps pip-audit
 
-all: format lint test pip-audit
+# Pre-commit
+
+pre-commit-install:
+	uv tool install pre-commit
+	uv run pre-commit install
+
+pre-commit: all
