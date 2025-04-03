@@ -53,6 +53,6 @@
 !/backend/static/css
 !/backend/static/leagues_icons
 /backend/static/*
-__pycache__/*
+__pycache__/
 coverage.xml
 .coverage
