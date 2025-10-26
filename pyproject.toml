@@ -1,6 +1,6 @@
 [project]
 name = "py-app-template"
-version = "0.2.0"
+version = "0.3.0"
 description = "So, you want to start a new Python project? This template is for you!"
 authors = [{ name = "soltanoff", email = "ilia@soltanov.dev" }]
 requires-python = ">=3.12, <4"
