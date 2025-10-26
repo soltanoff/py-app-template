@@ -65,7 +65,9 @@ mypy:
 lint: black isort flake8 pylint mypy
 
 pip-audit:
-	uv run pip-audit
+	# Ignore GHSA-2c2j-9gv5-cj73 - Starlette has possible denial-of-service vector when parsing large files in multipart forms.
+	# due to we do not use Starlette's multipart form parsing in our project.
+	uv run pip-audit --ignore-vuln=GHSA-2c2j-9gv5-cj73
 
 test:
 	PYTHONPATH=$(PYTHONPATH) uv run pytest -n 2
