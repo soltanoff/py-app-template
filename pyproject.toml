@@ -5,7 +5,7 @@ description = "So, you want to start a new Python project? This template is for 
 authors = [{ name = "soltanoff", email = "ilia@soltanov.dev" }]
 requires-python = ">=3.12, <4"
 dependencies = [
-    "fastapi>=0.120.0,<0.124",
+    "fastapi>=0.120.0,<0.125",
     "uvicorn>=0.38.0,<0.39",
 ]
 
