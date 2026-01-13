@@ -3,6 +3,10 @@
 import service
 
 
+def test_false():
+    assert False
+
+
 # Function returns a dictionary with a greeting message for a regular name
 def test_returns_dictionary_with_greeting_message():
     # Arrange
