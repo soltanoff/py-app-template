@@ -6,7 +6,7 @@ authors = [{ name = "soltanoff", email = "ilia@soltanov.dev" }]
 requires-python = ">=3.12, <4"
 dependencies = [
     "fastapi>=0.120.0,<0.129",
-    "uvicorn>=0.38.0,<0.41",
+    "uvicorn>=0.38.0,<0.42",
 ]
 
 [dependency-groups]
