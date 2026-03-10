@@ -56,3 +56,4 @@
 __pycache__/
 coverage.xml
 .coverage
+.DS_Store
